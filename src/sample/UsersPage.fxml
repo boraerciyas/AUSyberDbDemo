@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+    <center>
+        <BorderPane style="-fx-background-color: #0e1719;">
+            <bottom>
+                <AnchorPane prefHeight="25.0" prefWidth="600.0" style="-fx-background-color: #0e1719;" BorderPane.alignment="CENTER">
+                    <Label fx:id="db_label" text="Label">
+                        <graphic>
+                            <ImageView fx:id="db_icon" fitHeight="16.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" />
+                        </graphic>
+                    </Label>
+                    <Label fx:id="role_label" text="Label" textAlignment="CENTER" textFill="darkorange" AnchorPane.rightAnchor="15.0">
+                        <font>
+                            <Font name="Bitstream Vera Serif Bold" size="15.0" />
+                        </font>
+                    </Label>
+                    <padding>
+                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                    </padding>
+                </AnchorPane>
+            </bottom>
+            <center>
+            <BorderPane BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </BorderPane.margin>
+               <center>
+                      <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="470.0" prefWidth="580.0" style="-fx-border-color: #0e1719; -fx-background-color: #0e1719;">
+                          <TableView fx:id="users_table" prefHeight="500.0" prefWidth="576.0">
+                              <columns>
+                                  <TableColumn fx:id="username_column" prefWidth="104.0" text="Name" />
+                           <TableColumn fx:id="usersurname_column" prefWidth="95.0" text="Surname" />
+                                  <TableColumn fx:id="rolename_column" text="Role" />
+                                  <TableColumn fx:id="useremail_column" minWidth="0.0" prefWidth="140.0" text="User Email" />
+                                  <TableColumn fx:id="userinterest_column" prefWidth="155.0" text="User Interests" />
+                              </columns>
+                              <opaqueInsets>
+                                  <Insets />
+                              </opaqueInsets>
+                          </TableView>
+                      </ScrollPane>
+               </center>
+               <bottom>
+                  <ButtonBar BorderPane.alignment="CENTER">
+                     <buttons>
+                        <Button fx:id="edit_button" disable="true" mnemonicParsing="false" style="-fx-background-color: #EED202;" text="EDIT" />
+                        <Button fx:id="delete_button" disable="true" layoutX="505.0" layoutY="10.0" mnemonicParsing="false" style="-fx-background-color: #B33A3A;" text="DELETE" textFill="WHITE" />
+                     </buttons>
+                  </ButtonBar>
+               </bottom>
+            </BorderPane>
+            </center>
+            <top>
+                <Label text="Users" textAlignment="CENTER" textFill="#ffe6e6" BorderPane.alignment="CENTER">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                    <BorderPane.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </BorderPane.margin>
+                </Label>
+            </top>
+        </BorderPane>
+    </center>
+    <left>
+        <AnchorPane prefHeight="600.0" style="-fx-background-color: #0e1719;" BorderPane.alignment="CENTER">
+            <VBox minWidth="170.0" prefHeight="400.0" spacing="5.0" style="-fx-background-color: #0e1719;">
+                <Button fx:id="main_btn" alignment="BOTTOM_CENTER" contentDisplay="CENTER" maxHeight="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="200.0" style="-fx-background-color: aqua;" text="Main" textAlignment="CENTER">
+                    <VBox.margin>
+                        <Insets top="12.0" />
+                    </VBox.margin>
+                </Button>
+                <Button fx:id="users_btn" alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="200.0" style="-fx-background-color: aqua;" text="Users" textAlignment="CENTER" />
+                <Button fx:id="logs_btn" alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="200.0" style="-fx-background-color: aqua;" text="Logs" textAlignment="CENTER" />
+                <Button fx:id="roles_btn" alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="200.0" style="-fx-background-color: aqua;" text="Roles" textAlignment="CENTER" />
+            </VBox>
+            <Button fx:id="logout_btn" alignment="BOTTOM_CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefWidth="200.0" style="-fx-background-color: #fc4747;" text="Logout" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="0.0" />
+        </AnchorPane>
+    </left>
+</BorderPane>
